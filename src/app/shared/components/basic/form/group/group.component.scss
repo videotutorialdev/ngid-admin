@@ -1,0 +1,11 @@
+div.form-group {
+  margin-bottom: 1.25em;
+  & > label {
+    margin-bottom: 0.25em;
+    font-weight: 500;
+    &.required::after {
+      content: "*";
+      color: red;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+// theme colors
+$primary: $brand-color;
+$success: $success-color;
+$warning: $warning-color;
+$danger: $danger-color;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+// body
+$body-bg: #edeef3;
+
+// font
+$font-family-base: "Roboto", sans-serif;
+
+// heading
+$headings-margin-bottom: 0 !important;
+
+// card
+$card-border-width: 0;
+$card-border-color: transparent;
+$card-box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.1);
+$card-cap-bg: transparent;
+
+// rgb(239 239 239)
+// table
+$table-cell-padding-y: 0.75rem;
+$table-cell-padding-x: 1rem;
+$table-border-color: transparent;

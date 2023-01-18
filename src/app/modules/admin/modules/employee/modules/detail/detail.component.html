@@ -1,0 +1,68 @@
+<app-card [header]="moduleCode + '.header'">
+  <div class="row">
+    <div class="col-12 col-md-6">
+      <app-form-group [label]="moduleCode + '.form.label.username'">
+        <p>{{ employee.username || "-" }}</p>
+      </app-form-group>
+    </div>
+    <div class="col-12 col-md-6">
+      <app-form-group [label]="moduleCode + '.form.label.firstName'">
+        <p>{{ employee.firstName || "-" }}</p>
+      </app-form-group>
+    </div>
+    <div class="col-12 col-md-6">
+      <app-form-group [label]="moduleCode + '.form.label.lastName'">
+        <p>{{ employee.lastName || "-" }}</p>
+      </app-form-group>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <app-form-group [label]="moduleCode + '.form.label.email'">
+        <p>{{ employee.email || "-" }}</p>
+      </app-form-group>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <app-form-group [label]="moduleCode + '.form.label.birthDate'">
+        <p>
+          {{
+            employee.birthDate
+              ? (employee.birthDate
+                | date : globalService.constant.DATE_FORMAT_LONG)
+              : "-"
+          }}
+        </p>
+      </app-form-group>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <app-form-group [label]="moduleCode + '.form.label.basicSalary'">
+        <p>{{ (employee.basicSalary | customCurrency) || "-" }}</p>
+      </app-form-group>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <app-form-group [label]="moduleCode + '.form.label.status'">
+        <p>{{ (employee.status && employee.status.name) || "-" }}</p>
+      </app-form-group>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <app-form-group [label]="moduleCode + '.form.label.group'">
+        <p>{{ employee.group || "-" }}</p>
+      </app-form-group>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <app-form-group [label]="moduleCode + '.form.label.description'">
+        <p>{{ employee.description || "-" }}</p>
+      </app-form-group>
+    </div>
+  </div>
+
+  <div class="mt-4 d-flex justify-content-end">
+    <app-button (onClick)="handleBack()">
+      {{ "app.button.ok" | translate }}
+    </app-button>
+  </div>
+</app-card>

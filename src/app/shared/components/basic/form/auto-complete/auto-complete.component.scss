@@ -1,0 +1,37 @@
+div.auto-complete-wrapper {
+  div.form-control {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span.value {
+      width: 100%;
+      overflow: scroll;
+      /* Hide scrollbar for IE, Edge and Firefox */
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+div.auto-complete-search-box {
+  padding: 0.5em 1em;
+}
+
+ul.auto-complete-dropdown {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 250px;
+  li.auto-complete-dropdown-item {
+    padding: 0.5em 1em;
+    &:hover {
+      cursor: pointer;
+      background-color: var(--bs-gray-100);
+    }
+  }
+}

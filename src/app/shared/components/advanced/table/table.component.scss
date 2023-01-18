@@ -1,0 +1,96 @@
+$order-column-width: 3rem;
+$action-column-width: 10rem;
+
+div.table-wrapper {
+  div.not-found-wrapper {
+    text-align: center;
+    padding: 4em 1em;
+  }
+  div.table-header {
+    background-color: var(--bs-body-bg);
+    padding: 1em;
+  }
+  div.table-body {
+    table.table.table-striped {
+      thead {
+        tr {
+          th {
+            color: var(--bs-secondary);
+            font-weight: normal;
+            &.th-order {
+              width: $order-column-width;
+            }
+            &.th-action {
+              text-align: center;
+              width: $action-column-width;
+            }
+            &.sortable {
+              &:hover {
+                background-color: var(--bs-gray-100);
+              }
+            }
+
+            div.th-content {
+              white-space: nowrap;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              cursor: pointer;
+              em {
+                margin-left: 1em;
+                color: #e6e6e6;
+                position: relative;
+                &.sort-asc::after,
+                &.sort-desc::after {
+                  font-family: var(--fa-font-solid);
+                  position: absolute;
+                  left: 0;
+                  color: var(--bs-gray-500);
+                }
+
+                &.sort-asc::after {
+                  content: "\f0de";
+                }
+                &.sort-desc::after {
+                  content: "\f0dd";
+                }
+              }
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          &:nth-of-type(odd) {
+            td {
+              background-color: var(--bs-gray-100);
+              white-space: nowrap;
+              --bs-table-accent-bg: transparent;
+
+              &.td-order {
+                width: $order-column-width;
+              }
+              &.td-action {
+                text-align: center;
+                width: $action-column-width;
+              }
+              &.td-not-found {
+                background-color: transparent !important;
+                text-align: center;
+                div.td-content {
+                  padding: 4em 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  div.table-footer {
+    padding: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

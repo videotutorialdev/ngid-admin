@@ -1,0 +1,25 @@
+<app-lang-switcher></app-lang-switcher>
+<app-card [header]="moduleCode + '.header'" [isLoading]="isProcessing">
+  <form [formGroup]="formGroup">
+    <app-form-group [label]="moduleCode + '.form.label.username'" [required]="true">
+      <app-input
+      type="alphanumeric"
+        formControlName="username"
+        [placeholder]="moduleCode + '.form.placeholder.username'"
+      ></app-input>
+    </app-form-group>
+    <app-form-group [label]="moduleCode + '.form.label.password'" [required]="true">
+      <app-input
+        type="password"
+        formControlName="password"
+        [placeholder]="moduleCode + '.form.placeholder.password'"
+      />
+    </app-form-group>
+
+    <div class="d-flex justify-content-end mt-4">
+      <app-button (onClick)="handleSignIn()">
+        {{ moduleCode + '.button.signIn' | translate}}  
+      </app-button>
+    </div>
+  </form>
+</app-card>

@@ -1,0 +1,232 @@
+{
+  "app": {
+    "button": {
+      "save": "Save",
+      "update": "Update",
+      "back": "Back",
+      "add": "Add",
+      "yes": "Yes",
+      "cancel": "Cancel",
+      "ok": "Ok",
+      "reset": "Reset",
+      "filter": "Filter",
+      "backToHomePage": "Back to homepage"
+    },
+    "form": {
+      "validation": {
+        "required": {
+          "username": "Username must be filled",
+          "email": "Email address must be filled"
+        },
+        "email": {
+          "default": "Format email is not valid ('e.g: abc@xyz.com')"
+        },
+        "exists": {
+          "email": "Email address already exists",
+          "username": "Username already exists"
+        }
+      }
+    },
+    "modal": {
+      "confirmation": {
+        "header": {
+          "save": "Save Confirmation",
+          "delete": "Delete Confirmation",
+          "leave": "Leave Confirmation"
+        },
+        "message": {
+          "save": "Are you sure to save changes?",
+          "delete": "Are you sure to delete?",
+          "leave": "Your changes will be deleted, are you sure to leave this page?"
+        }
+      }
+    },
+    "auto-complete": {
+      "text": {
+        "noResultFoundFor": "Result not found"
+      }
+    },
+    "table": {
+      "input": {
+        "placeholder": {
+          "search": "Search..."
+        }
+      },
+      "text": {
+        "itemFrom": "item from ",
+        "entry": "entry",
+        "noResultFoundFor": "No result found for",
+        "dataNotFound": "Data not found",
+        "dataNotFoundDescription": "Currently, data not found or not ready yet. Please add new one to see the changes here."
+      }
+    },
+    "lang-switcher": {
+      "form": {
+        "label": {
+          "language": "Language"
+        }
+      }
+    }
+  },
+  "module": {
+    "auth": {
+      "module": {
+        "sign-in": {
+          "header": "Sign In",
+          "button": {
+            "signIn": "Sign In"
+          },
+          "form": {
+            "label": {
+              "username": "Username",
+              "password": "Password"
+            },
+            "placeholder": {
+              "username": "Enter username",
+              "password": "Entar password"
+            },
+            "validation": {
+              "required": {
+                "username": "Username must be filled",
+                "password": "Password must be filled"
+              }
+            }
+          },
+          "toast": {
+            "success": {
+              "signIn": "Successfully sing in to your account"
+            },
+            "error": {
+              "invalidUsernameOrPassword": "Invalid username or password",
+              "failedSignIn": "Login failed"
+            }
+          }
+        }
+      }
+    },
+    "admin": {
+      "header": "Employee Manager",
+      "link": {
+        "signOut": "Sign Out"
+      },
+      "module": {
+        "employee": {
+          "header": "Employee",
+          "form": {
+            "label": {
+              "status": "Status",
+              "group": "Group"
+            },
+            "placeholder": {
+              "status": "Choose status",
+              "group": "Choose group"
+            }
+          },
+          "table": {
+            "input": {
+              "placeholder": {
+                "search": "Search employee..."
+              }
+            },
+            "header": {
+              "username": "Username",
+              "firstName": "First Name",
+              "lastName": "Last Name",
+              "email": "Email",
+              "birthDate": "Birth Date",
+              "basicSalary": "Basic Salary",
+              "status": "Status",
+              "group": "Group",
+              "description": "Description"
+            }
+          },
+          "toast": {
+            "success": {
+              "delete": "Successfully to delete employee data"
+            },
+            "error": {
+              "delete": "Failed to delete employee data"
+            }
+          },
+          "module": {
+            "detail": {
+              "header": "Employee Detail",
+              "form": {
+                "label": {
+                  "username": "Username",
+                  "firstName": "First Name",
+                  "lastName": "Last Name",
+                  "email": "Email",
+                  "birthDate": "Birth Date",
+                  "basicSalary": "Basic Salary",
+                  "status": "Status",
+                  "group": "Group",
+                  "description": "Description"
+                }
+              }
+            },
+            "add-edit": {
+              "header": "Employee Detail",
+              "form": {
+                "label": {
+                  "username": "Username",
+                  "firstName": "First Name",
+                  "lastName": "Last Name",
+                  "email": "Email",
+                  "birthDate": "Birth Date",
+                  "basicSalary": "Basic Salary",
+                  "status": "Status",
+                  "group": "Group",
+                  "description": "Description"
+                },
+                "placeholder": {
+                  "username": "Enter username",
+                  "firstName": "Enter first name",
+                  "lastName": "Enter last name",
+                  "email": "Enter email address",
+                  "birthDate": "Choose birth date",
+                  "basicSalary": "Enter basic salary",
+                  "status": "Choose status",
+                  "group": "Choose group",
+                  "description": "Enter description"
+                },
+                "validation": {
+                  "required": {
+                    "firstName": "Name must be filled",
+                    "lastName": "Last name must be filled",
+                    "birthDate": "Birth date must be filled",
+                    "basicSalary": "Basic salary must be filled",
+                    "status": "Status must be selected",
+                    "group": "Group must be selected",
+                    "description": "Description must be filled"
+                  }
+                }
+              },
+              "toast": {
+                "success": {
+                  "update": "Successfully to update employee data",
+                  "save": "Successfully to add employee data"
+                },
+                "error": {
+                  "update": "Failed to update employee data",
+                  "save": "Failed to add employee data",
+                  "getEmployee": "Failed get employee data"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "header": {
+        "404": "Page Not Found",
+        "500": "Internal Server Error"
+      },
+      "message": {
+        "404": "The page you are looking for was not found, please come back in a moment.",
+        "500": "There was a problem with our system. Our team is currently checking and fixing the problem."
+      }
+    }
+  }
+}

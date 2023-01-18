@@ -1,0 +1,18 @@
+<div class="modal-header" *ngIf="header">
+  <h3 class="modal-title">
+    {{ header | translate }}
+  </h3>
+  <em class="fas fa-times cursor-pointer" (click)="onDismiss.emit()"></em>
+</div>
+<div class="modal-body">
+  <ng-container
+    *ngIf="isLoading; then loadingTemplate; else contentTemplate"
+  ></ng-container>
+  <ng-template #loadingTemplate> Loading... </ng-template>
+  <ng-template #contentTemplate>
+    <ng-content></ng-content>
+  </ng-template>
+</div>
+<div class="modal-footer" *ngIf="footerTemplate && !isLoading">
+  <ng-container *ngTemplateOutlet="footerTemplate"></ng-container>
+</div>

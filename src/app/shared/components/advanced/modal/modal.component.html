@@ -1,0 +1,21 @@
+<app-popup (onDismiss)="onDismiss.emit(true)">
+  <div class="text-center">
+    <div class="d-block">
+      <em class="fas fa-question-circle fa-3x text-warning py-3"></em>
+    </div>
+    <h3 class="modal-title" *ngIf="header">{{ header | translate }}</h3>
+    {{ message ? (message | translate) : "" }}
+    <div class="button-group center mt-4">
+      <app-button
+        variant="SECONDARY"
+        *ngIf="negativeButton"
+        (onClick)="onChange.emit(false)"
+      >
+        {{ negativeButton | translate }}
+      </app-button>
+      <app-button *ngIf="positiveButton" (onClick)="onChange.emit(true)">
+        {{ positiveButton | translate }}
+      </app-button>
+    </div>
+  </div>
+</app-popup>

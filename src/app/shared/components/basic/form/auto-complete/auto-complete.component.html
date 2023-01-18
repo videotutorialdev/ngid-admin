@@ -1,0 +1,45 @@
+<div
+  class="auto-complete-wrapper"
+  ngbDropdown
+  #autoCompleteDropDown="ngbDropdown"
+  container="body"
+>
+  <input
+    class="form-control"
+    [ngClass]="[isValid ? 'is-valid' : '', isInvalid ? 'is-invalid' : '']"
+    [value]="
+      formControl.value?.name || formControl.value || (placeholder | translate)
+    "
+    readonly
+    ngbDropdownToggle
+    [disabled]="formControl.disabled"
+  />
+  <div ngbDropdownMenu>
+    <div class="auto-complete-search-box">
+      <input
+        class="form-control"
+        placeholder="Search..."
+        (input)="handleInput($event)"
+      />
+    </div>
+    <app-scroll (onScrollEnd)="handleScrollEnd()" selector=".ps">
+      <perfect-scrollbar>
+        <ul class="auto-complete-dropdown">
+          <li
+            class="auto-complete-dropdown-item"
+            *ngFor="let option of options"
+            (click)="autoCompleteDropDown.close(); handleSelectOption(option)"
+          >
+            {{ option.name }}
+          </li>
+        </ul>
+      </perfect-scrollbar>
+    </app-scroll>
+    <p class="mx-3 mt-3" *ngIf="options?.length === 0 && keywords">
+      {{ moduleCode + ".text.noResultFoundFor" | translate }}: `{{ keywords }}`
+    </p>
+  </div>
+  <small class="text-danger" *ngIf="isInvalid">
+    {{ formControl.errors?.message | translate }}
+  </small>
+</div>

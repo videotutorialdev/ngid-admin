@@ -1,0 +1,17 @@
+<div class="input-group">
+  <span class="input-group-text"> Rp </span>
+  <input
+    type="text"
+    class="form-control"
+    [ngClass]="[isValid ? 'is-valid' : '', isInvalid ? 'is-invalid' : '']"
+    [placeholder]="placeholder | translate"
+    [attr.aria-label]="formControlName"
+    [value]="formControl.value | currency : '' : '' : '0.0-0'"
+    (input)="handleInput($event)"
+    (blur)="formControl.markAsTouched()"
+    [disabled]="formControl.disabled"
+  />
+</div>
+<small class="text-danger" *ngIf="isInvalid">
+  {{ formControl.errors?.message | translate }}
+</small>

@@ -1,0 +1,232 @@
+{
+  "app": {
+    "button": {
+      "save": "Simpan",
+      "update": "Ubah",
+      "back": "Kembali",
+      "add": "Tambah",
+      "yes": "Ya",
+      "cancel": "Batal",
+      "ok": "Oke",
+      "reset": "Reset",
+      "filter": "Filter",
+      "backToHomePage": "Kembali ke halaman awal"
+    },
+    "form": {
+      "validation": {
+        "required": {
+          "username": "Nama pengguna wajib diisi",
+          "email": "Alamat email wajib diisi"
+        },
+        "email": {
+          "default": "Format email tidak sesuai ('e.g: abc@xyz.com')"
+        },
+        "exists": {
+          "email": "Alamat email telah digunakan",
+          "username": "Nama pengguna telah digunakan"
+        }
+      }
+    },
+    "modal": {
+      "confirmation": {
+        "header": {
+          "save": "Konfirmasi Simpan",
+          "delete": "Konfirmasi Hapus",
+          "leave": "Konfirmasi Keluar"
+        },
+        "message": {
+          "save": "Apakah Anda yakin ingin menyimpan perubahan?",
+          "delete": "Apakah Anda yakin ingin menghapus data ini?",
+          "leave": "Perubahan yang Anda lakukan akan hilang, apakah Anda tetap ingin meninggalkan halaman ini?"
+        }
+      }
+    },
+    "auto-complete": {
+      "text": {
+        "noResultFoundFor": "Hasil tidak ditemukan untuk"
+      }
+    },
+    "table": {
+      "input": {
+        "placeholder": {
+          "search": "Cari"
+        }
+      },
+      "text": {
+        "itemFrom": "item dari ",
+        "entry": "entri",
+        "noResultFoundFor": "Hasil tidak ditemukan untuk",
+        "dataNotFound": "Data tidak ditemukan",
+        "dataNotFoundDescription": "Untuk saat ini masih kosong atau belum tersedia, silahkan tambah untuk dapat melihatnya disini."
+      }
+    },
+    "lang-switcher": {
+      "form": {
+        "label": {
+          "language": "Bahasa"
+        }
+      }
+    }
+  },
+  "module": {
+    "auth": {
+      "module": {
+        "sign-in": {
+          "header": "Masuk",
+          "button": {
+            "signIn": "Masuk"
+          },
+          "form": {
+            "label": {
+              "username": "Nama Pengguna",
+              "password": "Kata Sandi"
+            },
+            "placeholder": {
+              "username": "Masukkan nama pengguna",
+              "password": "Masukkan kata sandi"
+            },
+            "validation": {
+              "required": {
+                "username": "Nama pengguna wajib diisi",
+                "password": "Kata sandi wajib diisi"
+              }
+            }
+          },
+          "toast": {
+            "success": {
+              "signIn": "Berhasil masuk ke akun Anda"
+            },
+            "error": {
+              "invalidUsernameOrPassword": "Nama pengguna atau kata sandi salah",
+              "failedSignIn": "Gagal masuk"
+            }
+          }
+        }
+      }
+    },
+    "admin": {
+      "header": "Employee Manager",
+      "link": {
+        "signOut": "Keluar"
+      },
+      "module": {
+        "employee": {
+          "header": "Karyawan",
+          "form": {
+            "label": {
+              "status": "Status",
+              "group": "Grup"
+            },
+            "placeholder": {
+              "status": "Pilih status",
+              "group": "Pilih grup"
+            }
+          },
+          "table": {
+            "input": {
+              "placeholder": {
+                "search": "Cari karyawan..."
+              }
+            },
+            "header": {
+              "username": "Nama Pengguna",
+              "firstName": "Nama Depan",
+              "lastName": "Nama Belakang",
+              "email": "Email",
+              "birthDate": "Tanggal Lahir",
+              "basicSalary": "Gaji",
+              "status": "Status",
+              "group": "Grup",
+              "description": "Deskripsi"
+            }
+          },
+          "toast": {
+            "success": {
+              "delete": "Berhasil manghapus data karyawan"
+            },
+            "error": {
+              "delete": "Gagal menghapus data karyawan"
+            }
+          },
+          "module": {
+            "detail": {
+              "header": "Detail Karyawan",
+              "form": {
+                "label": {
+                  "username": "Nama Pengguna",
+                  "firstName": "Nama Depan",
+                  "lastName": "Nama Belakang",
+                  "email": "Email",
+                  "birthDate": "Tanggal Lahir",
+                  "basicSalary": "Gaji",
+                  "status": "Status",
+                  "group": "Grup",
+                  "description": "Deskripsi"
+                }
+              }
+            },
+            "add-edit": {
+              "header": "Detail Karyawan",
+              "form": {
+                "label": {
+                  "username": "Nama Pengguna",
+                  "firstName": "Nama Depan",
+                  "lastName": "Nama Belakang",
+                  "email": "Email",
+                  "birthDate": "Tanggal Lahir",
+                  "basicSalary": "Gaji",
+                  "status": "Status",
+                  "group": "Grup",
+                  "description": "Deskripsi"
+                },
+                "placeholder": {
+                  "username": "Masukkan nama pengguna",
+                  "firstName": "Masukkan nama depan",
+                  "lastName": "Nama belakang",
+                  "email": "Masukkan alamat email",
+                  "birthDate": "Pilih tanggal lahir",
+                  "basicSalary": "Masukkan gaji",
+                  "status": "Pilih status",
+                  "group": "Pilih grup",
+                  "description": "Masukkan deskripsi"
+                },
+                "validation": {
+                  "required": {
+                    "firstName": "Nama depan wajib diisi",
+                    "lastName": "Nama belakang wajib diisi",
+                    "birthDate": "Tanggal lahir wajib dipilih",
+                    "basicSalary": "Gaji wajib diisi",
+                    "status": "Status wajib dipilih",
+                    "group": "Grup wajib dipilih",
+                    "description": "Deskripsi wajib diisi"
+                  }
+                }
+              },
+              "toast": {
+                "success": {
+                  "update": "Berhasil mengubah data karyawan",
+                  "save": "Berhasil menambahkan data karyawan"
+                },
+                "error": {
+                  "update": "Gagal mengubah data karyawan",
+                  "save": "Gagal menambahkan data karyawan",
+                  "getEmployee": "Gagal mendapatkan data karyawan"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "error": {
+      "header": {
+        "404": "Halaman Tidak Ditemukan",
+        "500": "Kesalahan Server"
+      },
+      "message": {
+        "404": "Halaman yang Anda cari tidak ditemukan, silahkan kembali beberapa saat lagi.",
+        "500": "Terjadi masalah pada sistem kami. Tim kami sedang mengecek dan memperbaiki masalah tersebut."
+      }
+    }
+  }
+}

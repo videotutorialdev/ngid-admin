@@ -1,0 +1,58 @@
+<app-card [header]="moduleCode + '.header'">
+  <ng-template #headerRight>
+    <app-button (onClick)="handleAdd()">
+      <em class="fas fa-plus"></em>
+      {{ "app.button.add" | translate }}
+    </app-button>
+  </ng-template>
+  <app-table [model]="tableModel" stringUrl="/employees">
+    <ng-template #filter let-popup>
+      <form [formGroup]="formGroup">
+        <app-form-group [label]="moduleCode + '.form.label.status'">
+          <app-select
+            formControlName="status"
+            [placeholder]="moduleCode + '.form.placeholder.status'"
+            [options]="statuses"
+            optionValuePath="name"
+          ></app-select>
+        </app-form-group>
+        <app-form-group
+          [label]="moduleCode + '.form.label.group'"
+          [required]="true"
+        >
+          <app-auto-complete
+            formControlName="group"
+            [placeholder]="moduleCode + '.form.placeholder.group'"
+            optionValuePath="name"
+            stringUrl="/groups"
+          ></app-auto-complete>
+        </app-form-group>
+
+        <div class="button-group right mt-4">
+          <app-button
+            variant="SECONDARY"
+            (click)="popup.close(); handleReset()"
+          >
+            {{ "app.button.reset" | translate }}
+          </app-button>
+          <app-button (click)="popup.close(); handleFilter()">
+            {{ "app.button.filter" | translate }}
+          </app-button>
+        </div>
+      </form>
+    </ng-template>
+    <ng-template #actionButtons let-record>
+      <div class="button-group center">
+        <app-button size="SM" (onClick)="handleView(record)">
+          <em class="fas fa-search"></em>
+        </app-button>
+        <app-button size="SM" variant="WARNING" (onClick)="handleEdit(record)">
+          <em class="fas fa-pen"></em>
+        </app-button>
+        <app-button size="SM" variant="DANGER" (onClick)="handleDelete(record)">
+          <em class="fas fa-trash"></em>
+        </app-button>
+      </div>
+    </ng-template>
+  </app-table>
+</app-card>

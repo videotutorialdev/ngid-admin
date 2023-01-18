@@ -1,0 +1,6 @@
+<div class="form-group">
+  <label [ngClass]="required ? 'required' : ''" [for]="labelFor">
+    {{ label | translate }}
+  </label>
+  <ng-content></ng-content>
+</div>

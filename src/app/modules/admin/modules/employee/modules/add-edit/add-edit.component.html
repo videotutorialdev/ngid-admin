@@ -1,0 +1,131 @@
+<app-card [header]="moduleCode + '.header'" [isLoading]="isProcessing">
+  <form [formGroup]="formGroup">
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <app-form-group
+          [label]="moduleCode + '.form.label.username'"
+          [required]="true"
+        >
+          <app-input
+            type="alphaNumeric"
+            formControlName="username"
+            [placeholder]="moduleCode + '.form.placeholder.username'"
+          ></app-input>
+        </app-form-group>
+      </div>
+      <div class="col-12 col-md-6">
+        <app-form-group
+          [label]="moduleCode + '.form.label.firstName'"
+          [required]="true"
+        >
+          <app-input
+            formControlName="firstName"
+            [placeholder]="moduleCode + '.form.placeholder.firstName'"
+          ></app-input>
+        </app-form-group>
+      </div>
+      <div class="col-12 col-md-6">
+        <app-form-group
+          [label]="moduleCode + '.form.label.lastName'"
+          [required]="true"
+        >
+          <app-input
+            formControlName="lastName"
+            [placeholder]="moduleCode + '.form.placeholder.lastName'"
+          ></app-input>
+        </app-form-group>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <app-form-group
+          [label]="moduleCode + '.form.label.email'"
+          [required]="true"
+        >
+          <app-input
+            type="email"
+            formControlName="email"
+            [placeholder]="moduleCode + '.form.placeholder.email'"
+          ></app-input>
+        </app-form-group>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <app-form-group
+          [label]="moduleCode + '.form.label.birthDate'"
+          [required]="true"
+        >
+          <app-input
+            type="date"
+            formControlName="birthDate"
+            [placeholder]="moduleCode + '.form.placeholder.birthDate'"
+            [max]="currentDate"
+          ></app-input>
+        </app-form-group>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <app-form-group
+          [label]="moduleCode + '.form.label.basicSalary'"
+          [required]="true"
+        >
+          <app-input
+            type="currency"
+            formControlName="basicSalary"
+            [placeholder]="moduleCode + '.form.placeholder.basicSalary'"
+          ></app-input>
+        </app-form-group>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <app-form-group
+          [label]="moduleCode + '.form.label.status'"
+          [required]="true"
+        >
+          <app-select
+            formControlName="status"
+            [placeholder]="moduleCode + '.form.placeholder.status'"
+            [options]="statuses"
+          ></app-select>
+        </app-form-group>
+      </div>
+
+      <div class="col-12 col-md-6">
+        <app-form-group
+          [label]="moduleCode + '.form.label.group'"
+          [required]="true"
+        >
+          <app-auto-complete
+            formControlName="group"
+            [placeholder]="moduleCode + '.form.placeholder.group'"
+            optionValuePath="name"
+            stringUrl="/groups"
+          ></app-auto-complete>
+        </app-form-group>
+      </div>
+
+      <div class="col-12">
+        <app-form-group
+          [label]="moduleCode + '.form.label.description'"
+          [required]="true"
+        >
+          <app-textarea
+            formControlName="description"
+            [placeholder]="moduleCode + '.form.placeholder.description'"
+          ></app-textarea>
+        </app-form-group>
+      </div>
+    </div>
+  </form>
+
+  <div class="mt-4 d-flex justify-content-between">
+    <app-button variant="SECONDARY" (onClick)="handleBack()">
+      <em class="fas fa-arrow-left"></em>
+      {{ "app.button.back" | translate }}
+    </app-button>
+
+    <app-button (onClick)="handleSave()">
+      <em class="fas fa-paper-plane"></em>
+      {{ (id ? "app.button.update" : "app.button.save") | translate }}
+    </app-button>
+  </div>
+</app-card>

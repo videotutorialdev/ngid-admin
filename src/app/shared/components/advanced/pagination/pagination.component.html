@@ -1,0 +1,89 @@
+<div class="pagination-wrapper">
+  <ng-content></ng-content>
+  <ul class="pagination-list">
+    <li class="pagination-item">
+      <a
+        href="#"
+        class="pagination-link"
+        [ngClass]="model.page === 1 ? 'disabled' : ''"
+        (click)="handleChangePage($event, 1)"
+      >
+        <em class="fa-solid fa-angles-left"></em>
+      </a>
+    </li>
+
+    <li class="pagination-item">
+      <a
+        href="#"
+        class="pagination-link"
+        [ngClass]="model.page === 1 ? 'disabled' : ''"
+        (click)="handleBackPage($event)"
+      >
+        <em class="fas fa-chevron-left"></em>
+      </a>
+    </li>
+
+    <li class="pagination-item" *ngIf="paging.startPage > 1">
+      <a href="#" class="pagination-link" (click)="handleChangePage($event, 1)"
+        >1</a
+      >
+    </li>
+
+    <li class="pagination-item" *ngIf="paging.startPage > 2">
+      <a class="pagination-link separator">...</a>
+    </li>
+
+    <li class="pagination-item" *ngFor="let item of pages">
+      <a
+        href="#"
+        class="pagination-link"
+        [ngClass]="model.page === item ? 'active' : ''"
+        (click)="handleChangePage($event, item)"
+      >
+        {{ item }}
+      </a>
+    </li>
+
+    <li
+      class="pagination-item"
+      *ngIf="model.page < paging.lastPage - 2 && paging.lastPage > 7"
+    >
+      <a class="pagination-link separator">...</a>
+    </li>
+
+    <li
+      class="pagination-item"
+      *ngIf="model.page < paging.lastPage - 2 && paging.lastPage > 7"
+    >
+      <a
+        href="#"
+        class="pagination-link"
+        (click)="handleChangePage($event, paging.lastPage)"
+      >
+        {{ paging.lastPage }}
+      </a>
+    </li>
+
+    <li class="pagination-item">
+      <a
+        href="#"
+        class="pagination-link"
+        [ngClass]="model.page === paging.lastPage ? 'disabled' : ''"
+        (click)="handleNextPage($event)"
+      >
+        <em class="fas fa-chevron-right"></em>
+      </a>
+    </li>
+
+    <li class="pagination-item">
+      <a
+        href="#"
+        class="pagination-link"
+        [ngClass]="model.page === paging.lastPage ? 'disabled' : ''"
+        (click)="handleChangePage($event, paging.lastPage)"
+      >
+        <em class="fa-solid fa-angles-right"></em>
+      </a>
+    </li>
+  </ul>
+</div>

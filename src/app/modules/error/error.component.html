@@ -1,0 +1,9 @@
+<div class="error-wrapper">
+  <div class="error-container text-center">
+    <h1 class="mb-3">{{ moduleCode + ".header." + statusCode | translate }}</h1>
+    <p>{{ moduleCode + ".message." + statusCode | translate }}</p>
+    <app-button *ngIf="statusCode !== 500" (onClick)="handleBackToHomePage()">
+      {{ "app.button.backToHomePage" | translate }}
+    </app-button>
+  </div>
+</div>

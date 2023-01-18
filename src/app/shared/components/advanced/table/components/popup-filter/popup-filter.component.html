@@ -1,0 +1,5 @@
+<app-popup header="Filter" (onDismiss)="onDismiss.emit()" #popup>
+  <ng-container
+    *ngTemplateOutlet="filterTempl; context: { $implicit: popup }"
+  ></ng-container>
+</app-popup>

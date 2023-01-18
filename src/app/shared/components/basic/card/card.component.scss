@@ -1,0 +1,19 @@
+div.card {
+  box-shadow: 0 8px 17px 0px rgb(0 0 0 / 5%);
+  overflow: hidden;
+  div.loader {
+    div.line {
+      height: 5px;
+      width: 100%;
+      -webkit-animation: linearloader 1s linear infinite; /* Safari */
+      animation: linearloader 1s linear infinite;
+      background-color: darken($color: #00e2f1, $amount: 5);
+    }
+  }
+  div.card-header {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+  }
+}

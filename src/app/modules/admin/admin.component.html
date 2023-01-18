@@ -1,0 +1,27 @@
+<admin-layout>
+  <app-lang-switcher>
+    <div
+      class="profile-wrapper"
+      ngbDropdown
+      #profileDropDown="ngbDropdown"
+      placement="bottom-end"
+      container="body"
+    >
+      <div class="profile-image ms-2" ngbDropdownToggle>
+        <img src="/assets/img/john-doe.png" alt="profile" />
+      </div>
+      <div ngbDropdownMenu>
+        <ul class="profile-list">
+          <li class="item">
+            <a href="#" (click)="handleSIgnOut($event)">
+              {{ moduleCode + ".link.signOut" | translate }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </app-lang-switcher>
+  <div class="admin-body">
+    <router-outlet></router-outlet>
+  </div>
+</admin-layout>

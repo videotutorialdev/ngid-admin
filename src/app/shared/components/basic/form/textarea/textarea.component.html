@@ -1,0 +1,11 @@
+<ng-container [formGroup]="formGroup">
+  <textarea
+    class="form-control"
+    [ngClass]="[isValid ? 'is-valid' : '', isInvalid ? 'is-invalid' : '']"
+    [placeholder]="placeholder | translate"
+    [formControlName]="formControlName"
+  ></textarea>
+</ng-container>
+<small class="text-danger" *ngIf="isInvalid">
+  {{ formControl.errors?.message | translate }}
+</small>

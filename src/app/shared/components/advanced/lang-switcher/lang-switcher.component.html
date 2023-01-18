@@ -1,0 +1,18 @@
+<div class="d-flex justify-content-end align-items-center mb-2">
+  <form [formGroup]="formGroup">
+    <div class="d-flex align-items-center">
+      <label class="me-2" for="language">
+        {{ moduleCode + ".form.label.language" | translate }}:
+      </label>
+      <app-select
+        formControlName="lang"
+        [options]="languages"
+        optionValuePath="code"
+        (onChange)="handleChangeLanguage($event)"
+        size="SM"
+      >
+      </app-select>
+    </div>
+  </form>
+  <ng-content></ng-content>
+</div>

@@ -1,0 +1,11 @@
+div.auth-layout-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  div.auth-layout {
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 400px;
+  }
+}

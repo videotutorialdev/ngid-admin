@@ -1,0 +1,23 @@
+// button group
+div.button-group {
+  &.center {
+    text-align: center;
+    button {
+      margin: 0.2em;
+    }
+  }
+  &.right {
+    text-align: right;
+    button {
+      margin-left: 0.4em;
+    }
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+button.btn:not(.btn-sm) {
+  min-width: 150px !important;
+}

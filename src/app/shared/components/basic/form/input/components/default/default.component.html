@@ -1,0 +1,14 @@
+<div class="input-group" [formGroup]="formGroup">
+  <input
+    [type]="type || 'text'"
+    class="form-control"
+    [ngClass]="[isValid ? 'is-valid' : '', isInvalid ? 'is-invalid' : '']"
+    [placeholder]="placeholder | translate"
+    [attr.aria-label]="formControlName"
+    [formControlName]="formControlName"
+    [max]="max"
+  />
+</div>
+<small class="text-danger" *ngIf="isInvalid">
+  {{ formControl.errors?.message | translate }}
+</small>

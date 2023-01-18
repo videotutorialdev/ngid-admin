@@ -1,0 +1,32 @@
+<select
+  [compareWith]="compareFn"
+  [formControl]="formControl"
+  class="form-select app-drop-down-select"
+  [ngClass]="[
+    size ? 'form-select-' + (size | lowercase) : '',
+    isValid ? 'is-valid' : '',
+    isInvalid ? 'is-invalid' : ''
+  ]"
+  (change)="handleChange($event)"
+  [attr.auto_name]="formControlName"
+>
+  <ng-container *ngIf="placeholder">
+    <option [value]="null">
+      {{ placeholder | translate }}
+    </option>
+  </ng-container>
+  <option
+    *ngFor="let option of options"
+    [ngValue]="
+      optionValuePath ? (option | resolveValue : optionValuePath) : option
+    "
+  >
+    {{ option | resolveValue : optionViewPath || "name" | translate }}
+  </option>
+</select>
+<small
+  class="d-block text-danger mt-2"
+  *ngIf="isInvalid && errors.message && !errors.invisible"
+>
+  {{ errors.message | translate }}
+</small>

@@ -1,0 +1,10 @@
+<button
+  class="btn"
+  [ngClass]="[
+    'btn-' + (variant || 'PRIMARY' | lowercase),
+    'btn-' + (size || 'MD' | lowercase)
+  ]"
+  (click)="onClick.emit($event)"
+>
+  <ng-content></ng-content>
+</button>

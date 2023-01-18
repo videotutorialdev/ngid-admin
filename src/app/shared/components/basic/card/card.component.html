@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="loader" *ngIf="isLoading">
+    <div class="line"></div>
+  </div>
+  <div class="card-header" *ngIf="header">
+    <h3 class="title">{{ header | translate }}</h3>
+    <ng-container *ngTemplateOutlet="headerRightTmpl"></ng-container>
+  </div>
+  <div class="card-body" [ngClass]="customClassBody">
+    <ng-content></ng-content>
+  </div>
+</div>
