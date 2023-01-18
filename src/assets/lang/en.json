@@ -107,9 +107,15 @@
     "admin": {
       "header": "Employee Manager",
       "link": {
+        "accountSettings": "Account Setting",
         "signOut": "Sign Out"
       },
       "module": {
+        "account-settings": {
+          "text": {
+            "comingSoon": "Coming soon!"
+          }
+        },
         "employee": {
           "header": "Employee",
           "form": {

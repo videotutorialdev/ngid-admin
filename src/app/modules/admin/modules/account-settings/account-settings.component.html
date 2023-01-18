@@ -1,0 +1,11 @@
+<app-card>
+  <div
+    class="text-center d-flex align-items-center flex-column justify-content-center"
+    style="height: 20vh"
+  >
+    <p>{{ moduleCode + ".text.comingSoon" | translate }}</p>
+    <app-button (onClick)="router.navigate(['/'])">{{
+      "app.button.backToHomePage" | translate
+    }}</app-button>
+  </div>
+</app-card>

@@ -8,12 +8,39 @@
       container="body"
     >
       <div class="profile-image ms-2" ngbDropdownToggle>
-        <img [src]="globalService.session.user.pictureUrl" alt="profile" />
+        <img
+          [src]="globalService.session.user.pictureUrl"
+          alt="profile picture"
+        />
       </div>
-      <div ngbDropdownMenu>
+      <div class="profile-dropdown" ngbDropdownMenu>
+        <div class="profile">
+          <div class="profile-picture">
+            <img
+              [src]="globalService.session.user.pictureUrl"
+              alt="profile picture"
+            />
+          </div>
+          <div>
+            <h6>{{ globalService.session.user.fullName }}</h6>
+            <span class="text-secondary">
+              {{ globalService.session.user.email }}
+            </span>
+          </div>
+        </div>
         <ul class="profile-list">
+          <li class="item border-bottom">
+            <a
+              routerLink="/admin/account-settings"
+              (click)="profileDropDown.close()"
+            >
+              <em class="fas fa-gear me-2"></em>
+              {{ moduleCode + ".link.accountSettings" | translate }}
+            </a>
+          </li>
           <li class="item">
             <a href="#" (click)="handleSIgnOut($event)">
+              <em class="fas fa-power-off me-2"></em>
               {{ moduleCode + ".link.signOut" | translate }}
             </a>
           </li>

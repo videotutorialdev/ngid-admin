@@ -107,9 +107,15 @@
     "admin": {
       "header": "Employee Manager",
       "link": {
+        "accountSettings": "Pengaturan Akun",
         "signOut": "Keluar"
       },
       "module": {
+        "account-settings": {
+          "text": {
+            "comingSoon": "Akan segera hadir!"
+          }
+        },
         "employee": {
           "header": "Karyawan",
           "form": {

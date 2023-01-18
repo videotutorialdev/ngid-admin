@@ -12,6 +12,13 @@ export const adminRoutes: Routes = [
         redirectTo: 'employee',
       },
       {
+        path: 'account-settings',
+        loadChildren: () =>
+          import('./modules/account-settings/account-settings.module').then(
+            (m) => m.AccountSettingsModule
+          ),
+      },
+      {
         path: 'employee',
         loadChildren: () =>
           import('./modules/employee/employee.module').then(

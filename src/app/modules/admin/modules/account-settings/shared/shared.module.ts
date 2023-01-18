@@ -4,4 +4,4 @@ import { AdminSharedModule } from '../../../shared/shared.module';
 @NgModule({
   exports: [AdminSharedModule],
 })
-export class EmployeeSharedModule {}
+export class AccountSettingsSharedModule {}

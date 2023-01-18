@@ -7,6 +7,7 @@ export class UserModel {
   public lastName: string;
   public pictureUrl: string;
   public fullName: string;
+  public email: string;
   private constructor() {}
   public static create(responseDTO: UserResponseDTO): UserModel {
     let model = new UserModel();

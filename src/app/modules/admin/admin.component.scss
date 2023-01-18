@@ -16,18 +16,41 @@ div.profile-image {
   }
 }
 
-ul.profile-list {
-  margin: 0;
+div.profile-dropdown {
+  width: 300px;
+  border: none;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
   padding: 0;
-  li {
-    list-style: none;
-    a {
-      text-decoration: none;
-      color: initial;
-      padding: 0.5em 1em;
-      display: block;
-      &:hover {
-        background-color: var(--bs-gray-100);
+  div.profile {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    div.profile-picture {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 1em;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  ul.profile-list {
+    margin: 0;
+    padding: 0;
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: initial;
+        padding: 1em;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+          background-color: var(--bs-gray-100);
+        }
       }
     }
   }
