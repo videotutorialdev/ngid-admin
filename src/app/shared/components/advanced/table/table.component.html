@@ -97,7 +97,11 @@
               </td>
             </tr>
             <tr *ngFor="let row of state.rows; let i = index">
-              <td class="td-order">{{ i + 1 }}</td>
+              <td class="td-order">
+                {{
+                  (state.pagination.page - 1) * state.pagination.perPage + i + 1
+                }}
+              </td>
               <td *ngFor="let column of row.columns">
                 <div class="td-content">
                   {{ column.value }}
