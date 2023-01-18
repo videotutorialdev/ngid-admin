@@ -24,6 +24,7 @@ export class UserModel {
       pictureUrl,
       fullName: `${firstName} ${lastName}`,
     };
+
     return model;
   }
 

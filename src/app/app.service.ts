@@ -95,7 +95,7 @@ export class AppService {
         );
         try {
           const userString = atob(globalService.session.token);
-          const user: UserModel = JSON.parse(userString);
+          const user: UserModel = UserModel.create(JSON.parse(userString));
           globalService.session.setUser(user);
           resolve();
         } catch {

@@ -8,7 +8,7 @@
       container="body"
     >
       <div class="profile-image ms-2" ngbDropdownToggle>
-        <img src="/assets/img/john-doe.png" alt="profile" />
+        <img [src]="globalService.session.user.pictureUrl" alt="profile" />
       </div>
       <div ngbDropdownMenu>
         <ul class="profile-list">
