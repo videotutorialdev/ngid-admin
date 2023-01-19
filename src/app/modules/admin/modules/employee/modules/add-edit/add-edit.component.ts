@@ -147,7 +147,13 @@ export class AddEditComponent extends BaseModule {
     }
   }
 
-  private saveEmployee(dto: EmployeeDTO): void {
+  private async saveEmployee(dto: EmployeeDTO): Promise<void> {
+    const isValidUsername = await this.validateUsername(dto.username);
+    if (!isValidUsername) return;
+
+    const isValidEmail = await this.validateEmail(dto.email);
+    if (!isValidEmail) return;
+
     this._service.save(dto).subscribe({
       next: () => {
         this.globalService.toastService.showSuccess(
