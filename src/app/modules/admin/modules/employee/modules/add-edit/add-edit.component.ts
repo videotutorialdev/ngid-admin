@@ -18,6 +18,7 @@ export class AddEditComponent extends BaseModule {
   public statuses: Array<StatusModel>;
   public groups: Array<GroupModel>;
   public currentDate: string | null;
+  public employee: EmployeeModel;
   constructor(
     private _route: ActivatedRoute,
     private _service: EmployeeService,
@@ -103,7 +104,8 @@ export class AddEditComponent extends BaseModule {
     if (this.id) {
       this._service.getById(this.id).subscribe({
         next: (dto: EmployeeDTO) => {
-          const { birthDate, ...model } = EmployeeModel.create(dto);
+          this.employee = EmployeeModel.create(dto);
+          const { birthDate, ...model } = this.employee;
           this.formGroup.patchValue({
             ...model,
             birthDate: birthDate
@@ -139,49 +141,10 @@ export class AddEditComponent extends BaseModule {
         .subscribe((confirm) => {
           if (confirm) {
             this.setStateProcessing();
-            this.validateEmployee(dto);
+            this.id ? this.updateEmployee(dto) : this.saveEmployee(dto);
           }
         });
     }
-  }
-
-  /**
-   * validateEmployee
-   * for support validate employee when using json-server,
-   * then we have to get it manualy ("one by one")
-   * But this is not best practice for user validation with real api/project
-   * @param dto
-   */
-  private validateEmployee(dto: EmployeeDTO): void {
-    this._service.getByUsername(dto.username).subscribe({
-      next: (user) => {
-        if (user) {
-          this.setStateReady();
-          this.formGroup.get('username')?.setErrors({
-            message: `app.form.validation.exists.username`,
-          });
-        } else {
-          this._service.getByEmail(dto.email).subscribe({
-            next: (user) => {
-              if (user) {
-                this.setStateReady();
-                this.formGroup.get('email')?.setErrors({
-                  message: `app.form.validation.exists.email`,
-                });
-              } else {
-                this.id ? this.updateEmployee(dto) : this.saveEmployee(dto);
-              }
-            },
-            error: (responseError: HttpErrorResponse) => {
-              this.showSaveError(responseError);
-            },
-          });
-        }
-      },
-      error: (responseError: HttpErrorResponse) => {
-        this.showSaveError(responseError);
-      },
-    });
   }
 
   private saveEmployee(dto: EmployeeDTO): void {
@@ -207,7 +170,17 @@ export class AddEditComponent extends BaseModule {
     );
   }
 
-  private updateEmployee(dto: EmployeeDTO): void {
+  private async updateEmployee(dto: EmployeeDTO): Promise<void> {
+    if (this.employee.username !== dto.username) {
+      const isValidUsername = await this.validateUsername(dto.username);
+      if (!isValidUsername) return;
+    }
+
+    if (this.employee.email !== dto.email) {
+      const isValidEmail = await this.validateEmail(dto.email);
+      if (!isValidEmail) return;
+    }
+
     this._service.update(this.id, dto).subscribe({
       next: () => {
         this.globalService.toastService.showSuccess(
@@ -226,6 +199,50 @@ export class AddEditComponent extends BaseModule {
         );
         this.setStateReady();
       },
+    });
+  }
+
+  private validateUsername(username: string): Promise<boolean> {
+    return new Promise((resolve) => {
+      this._service.getByUsername(username).subscribe({
+        next: (user) => {
+          if (user) {
+            this.setStateReady();
+            this.formGroup.get('username')?.setErrors({
+              message: `app.form.validation.exists.username`,
+            });
+            resolve(false);
+          } else {
+            resolve(true);
+          }
+        },
+        error: (responseError: HttpErrorResponse) => {
+          this.showSaveError(responseError);
+          resolve(false);
+        },
+      });
+    });
+  }
+
+  private validateEmail(email: string): Promise<boolean> {
+    return new Promise((resolve) => {
+      this._service.getByEmail(email).subscribe({
+        next: (user) => {
+          if (user) {
+            this.setStateReady();
+            this.formGroup.get('email')?.setErrors({
+              message: `app.form.validation.exists.email`,
+            });
+            resolve(false);
+          } else {
+            resolve(true);
+          }
+        },
+        error: (responseError: HttpErrorResponse) => {
+          this.showSaveError(responseError);
+          resolve(false);
+        },
+      });
     });
   }
 }
